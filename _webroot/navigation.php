@@ -31,7 +31,7 @@ function createNavigation()
 {
 	//PlaceHolder Vars
 	$count=0;
-	$default="";
+	//$default="";
 	$sysadmin="";
 	$admin="";
 	$staff="";

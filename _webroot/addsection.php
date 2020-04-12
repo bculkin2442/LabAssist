@@ -16,7 +16,7 @@ require_once "navigation.php";
 #Page Specific imports
 require_once "logic/addsection-logic.php";
 
-$error="";
+//$error="";
 
 #Check to see if the users are valid
 verifyUser();

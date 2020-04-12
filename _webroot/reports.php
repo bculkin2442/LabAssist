@@ -21,7 +21,7 @@ header;
 
 
 
-$error = "";
+//$error = "";
 $html = "";
 $reportSelected="";
 

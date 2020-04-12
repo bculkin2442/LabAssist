@@ -17,7 +17,7 @@ require_once "navigation.php";
 require_once "logic/addclass-logic.php";
 
 
-$error="";
+//$error="";
 
 #Check to see if the users are valid
 verifyUser();

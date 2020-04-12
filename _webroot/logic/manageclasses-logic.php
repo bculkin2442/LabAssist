@@ -452,7 +452,7 @@ SQL;
 				return $query;
 			}
 
-			return $sql;
+			return $query;
 		}
 	}
 

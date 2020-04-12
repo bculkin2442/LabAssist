@@ -63,14 +63,15 @@ HTML;
 	<td> {$twelve} - {$otwelve} </td>
 HTML;
 
-		$clearPrev = false;
+		// FIXME Determine if this is necessary or not
+		//$clearPrev = false;
 
 		for($i = 1; $i <= 5; $i++) {
 			if(isset($scheds[$i][$otime['tm_hour']][$otime['tm_min']])) {
 				$sched = $scheds[$i][$otime['tm_hour']][$otime['tm_min']][0];
 
 				/*
-				 * @NOTE
+				 * IMPROVE
 				 *
 				 * Consider colorizing these table entries.
 				 *
@@ -117,13 +118,13 @@ function mapRecords($data) {
 		$wkday  = strftime("%u", strtotime($row['strdate']));
 		$wkname = strftime("%A", strtotime($row['strdate']));
 
-		$cnt = 0;
+		//$cnt = 0;
 
 		for($tme = $row['starttime']; $tme !== $row['endtime']; $tme = advanceHalfHour($tme)) {
-			$idx = 0;
+			//$idx = 0;
 
 			if($tme['tm_min'] === 29) {
-				$idx += 1;
+				//$idx += 1;
 			}
 
 			$ret[$wkday][$tme['tm_hour']][$tme['tm_min']][] = array(
@@ -132,7 +133,7 @@ function mapRecords($data) {
 				'mangled-id' => "{$row['idno']} {$tme['tm_hour']}:{$tme['tm_min']} {$wkname}"
 			);
 
-			$cnt += 1;
+			//$cnt += 1;
 		}
 	}
 

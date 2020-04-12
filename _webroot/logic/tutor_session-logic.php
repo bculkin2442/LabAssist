@@ -378,7 +378,7 @@ function checkSection($class)
 /*
  * Filter out certain classes.
  */
-function filterClasses()
+function filterClasses($result)
 {
 	//Filter out anything not accessable b y students
 	$curRole=getUserLevelAccessIdno($_SESSION['sidno']);
@@ -398,6 +398,7 @@ function filterClasses()
 					unset($result[$newKey]);
 				}
 			}
+			
 			//Re-index the array
 			$result = array_values($result);
 		}
@@ -436,8 +437,6 @@ function isClockin()
  */
 function attemptClockin()
 {
-	//Default return code
-	$status = -999;
 
 	//Make sure that we have provided all the information. Otherwise return proper error code
 	if(!isSet($_POST["department"]))

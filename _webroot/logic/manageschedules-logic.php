@@ -137,13 +137,13 @@ function mapRecords($data) {
 		$wkday  = strftime("%u", strtotime($row['strdate']));
 		$wkname = strftime("%A", strtotime($row['strdate']));
 
-		$cnt = 0;
+		//$cnt = 0;
 
 		for($tme = $row['starttime']; $tme !== $row['endtime']; $tme = advanceHalfHour($tme)) {
-			$idx = 0;
+			//$idx = 0;
 
 			if($tme['tm_min'] === 29) {
-				$idx += 1;
+				//$idx += 1;
 			}
 
 			$ret[$wkday][$tme['tm_hour']][$tme['tm_min']][] = array(
@@ -152,7 +152,7 @@ function mapRecords($data) {
 				'mangled-id' => "{$row['idno']} {$tme['tm_hour']}:{$tme['tm_min']} {$wkname}"
 			);
 
-			$cnt += 1;
+			//$cnt += 1;
 		}
 	}
 
@@ -321,7 +321,6 @@ SQL;
  * Unregister a schedule.
  */
 function unregisterSchedule($val, $dept) {
-	$idno = "";
 	$hour = 0;
 	$min  = 0;
 	$day  = 0;
@@ -329,7 +328,7 @@ function unregisterSchedule($val, $dept) {
 	if($val[0] === 'N') {
 		list($hour, $min, $day) = sscanf($val, "NONE %d:%d %s");
 	} else {
-		list($idno, $hour, $min, $day) = sscanf($val, "%s %d:%d %s");
+		list(, $hour, $min, $day) = sscanf($val, "%s %d:%d %s");
 	}
 
 	$sql = <<<'SQL'
@@ -392,8 +391,6 @@ function getUserRealName($idno)
 	$sql = "SELECT users.realname FROM users WHERE users.idno?";
 
 	$result = databaseQuery($sql, array($idno));
-
-	$arr = array();
 
 	if(is_array($result) && !empty($result)) {
 		return trim($result[0]['realname']);

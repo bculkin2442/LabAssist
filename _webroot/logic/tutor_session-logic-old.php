@@ -64,7 +64,7 @@ function generateClockinClockoutForm()
 	}
 	else
 	{
-		$error = "Internal database error. Contact System Administrator.asdf";
+		//$error = "Internal database error. Contact System Administrator.asdf";
 	}
 
 
@@ -409,7 +409,7 @@ function attemptClockin()
 		$result = $stmt->execute(array($_SESSION['sidno'],$_POST['section']));
 
 		//If everything worked successfully return successful
-		if($result = true)
+		if($result == true)
 		{
 			$status=1;
 			$_POST["status"]="clocked in";
@@ -441,7 +441,7 @@ function attemptClockout()
 		$result = $stmt->execute(array($_SESSION['sidno']));
 
 		//If everything worked successfully return successful
-		if($result = true)
+		if($result == true)
 		{
 			$status=1;
 			$_POST["status"]="clocked out";

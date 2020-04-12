@@ -14,7 +14,7 @@ require_once "navigation.php";
 #Page Specific import
 require_once "logic/managelabhours-logic.php";
 
-$error="";
+//$error="";
 
 #Check to see if the users are valid
 verifyUser();

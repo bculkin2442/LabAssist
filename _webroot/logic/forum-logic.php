@@ -931,8 +931,6 @@ function getUserRealName($idno)
 
 	$result = databaseQuery($sql, array($idno));
 
-	$arr = array();
-
 	if(is_array($result) && !empty($result)) {
 		return trim($result[0]['realname']);
 	} else {

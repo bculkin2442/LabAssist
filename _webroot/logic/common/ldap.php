@@ -52,7 +52,7 @@ function ldapCon()
 	/*
 	 * The port to query the global catalog for active directory is 3268
 	 */
-	$ldap_connection = ldap_connect($server,$serverPORT) or die("Could not connect to $ldaphost");
+	$ldap_connection = ldap_connect($server,$serverPORT) or die("Could not connect to $server");
 
 	//var_dump($ldap_connection);
 
@@ -118,6 +118,8 @@ function chkServer($host, $port)
 	}
 	else
 	{
+	    $errno = 0;
+	    $errstr = "";
 		/*
 		 * Host exists, now check to see if host wants to talk on the port.
 		 */
@@ -193,8 +195,8 @@ function getSidnoAttr($sidno) {
 	// Active Directory server
 	$ldap=ldapCon();
 
-	$ldap_dn="ou=people,DC=wvu,DC=edu";
-	$ldapParams="ou=people,dc=wvu,dc=edu";
+	//$ldap_dn="ou=people,DC=wvu,DC=edu";
+	//$ldapParams="ou=people,dc=wvu,dc=edu";
 
 	ldap_bind($ldap) or die("Could not bind to LDAP");
 

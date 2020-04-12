@@ -22,7 +22,7 @@ function connectDB()
 	 * Connection string information for the database.
 	 */
 	 
-	$host     = "localhost";
+	//$host     = "localhost";
 	$user     = "labassist";
 
 	$dBase = "labassist";

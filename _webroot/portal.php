@@ -11,7 +11,7 @@ require_once "page/portal-base-page.php";
 require_once "page/default-layout-page.php";
 require_once "navigation.php";
 
-$error="";
+//$error="";
 
 #Check to see if the users are valid
 verifyUser();

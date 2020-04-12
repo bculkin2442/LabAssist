@@ -126,21 +126,21 @@ function mapSchedules($data) {
 
 	foreach($data as $row) {
 		$wkday  = strftime("%u", strtotime($row['strdate']));
-		$wkname = strftime("%A", strtotime($row['strdate']));
+		//$wkname = strftime("%A", strtotime($row['strdate']));
 
-		$cnt = 0;
+		//$cnt = 0;
 
 		for($tme = $row['starttime']; $tme !== $row['endtime']; $tme = advanceHalfHour($tme)) {
-			$idx = 0;
+			//$idx = 0;
 
 			if($tme['tm_min'] === 29)
-				$idx += 1;
+				//$idx += 1;
 
 			$ret[$wkday][$tme['tm_hour']][$tme['tm_min']] = array(
 				'name' => $row['rname']
 			);
 
-			$cnt += 1;
+			//$cnt += 1;
 		}
 	}
 
@@ -151,7 +151,7 @@ function mapSchedules($data) {
  * Generate a claim button.
  */
 function genClaimButton($tme) {
-	$val = "{$_SESSION['useridno']} {$tme}";
+	//$val = "{$_SESSION['useridno']} {$tme}";
 
 	$html=<<<HTML
 <form action='{$_SERVER['PHP_SELF']}' method='post'>

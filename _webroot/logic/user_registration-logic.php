@@ -106,7 +106,8 @@ function insertRegistration()
 
 		$stmt= $dbCon->prepare($sql);
 
-		$result = $stmt->execute(array($_SESSION["userAttr"]['sidno'],$_POST['fname'],$_POST['email'],"student",$username));
+		// FIXME account for a possible error here
+		$stmt->execute(array($_SESSION["userAttr"]['sidno'],$_POST['fname'],$_POST['email'],"student",$username));
 
 		$status = 1;
 	}
